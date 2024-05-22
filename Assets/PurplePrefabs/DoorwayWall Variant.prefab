@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 45481893385053720, guid: c508da1b9a3993e458cab5ca2c2e7e5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.529268
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 45481893385053720, guid: c508da1b9a3993e458cab5ca2c2e7e5a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51,6 +51,18 @@ PrefabInstance:
     - target: {fileID: 1537794484894160169, guid: c508da1b9a3993e458cab5ca2c2e7e5a, type: 3}
       propertyPath: m_Name
       value: DoorwayWall Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853523899655231429, guid: c508da1b9a3993e458cab5ca2c2e7e5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572565412875959342, guid: c508da1b9a3993e458cab5ca2c2e7e5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066050961554577717, guid: c508da1b9a3993e458cab5ca2c2e7e5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6138297464485516196, guid: c508da1b9a3993e458cab5ca2c2e7e5a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

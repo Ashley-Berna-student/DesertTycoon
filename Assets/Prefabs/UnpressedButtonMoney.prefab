@@ -116,6 +116,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6492345409023589506}
+  - component: {fileID: 2142629752675073715}
+  - component: {fileID: 8738369097795462695}
   m_Layer: 0
   m_Name: UnpressedButtonMoney
   m_TagString: Untagged
@@ -140,6 +142,43 @@ Transform:
   - {fileID: 3238409460277940477}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2142629752675073715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263363345022666045}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.6028864, z: 1}
+  m_Center: {x: 0, y: 0.27991045, z: 0}
+--- !u!114 &8738369097795462695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7263363345022666045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46533e0cb9a502b4c976f10dc04b3532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionText: I'm an interactable object!
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7386951708983527985
 GameObject:
   m_ObjectHideFlags: 0

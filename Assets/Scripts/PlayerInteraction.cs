@@ -1,50 +1,77 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerInteraction : MonoBehaviour
+namespace Money
 {
-    [SerializeField] private float maxDistance = 2f;
-    [SerializeField] private Text interactableName;
-
-    private InteractionObject targetInteraction;
-
-    // Update is called once per frame
-    void Update()
+    public class PlayerInteraction : MonoBehaviour
     {
-        Vector3 origin = Camera.main.transform.position;
-        Vector3 direction = Camera.main.transform.forward;
-        RaycastHit raycastHit = new RaycastHit();
-        string interactionText = " ";
-        targetInteraction = null;
+        [SerializeField] private float maxDistance = 2f;
+        [SerializeField] private Text interactableName;
+        public Player player;
 
-        if (Physics.Raycast(origin, direction, out raycastHit, maxDistance))
+        private InteractionObject targetInteraction;
+
+        void Update()
         {
-            targetInteraction = raycastHit.collider.gameObject.GetComponent<InteractionObject>();
+            Vector3 origin = Camera.main.transform.position;
+            Vector3 direction = Camera.main.transform.forward;
+            RaycastHit raycastHit;
+            string interactionText = " ";
+            targetInteraction = null;
+
+            Debug.DrawRay(origin, direction * maxDistance, Color.red); // Visualize the raycast
+
+            if (Physics.Raycast(origin, direction, out raycastHit, maxDistance))
+            {
+                targetInteraction = raycastHit.collider.gameObject.GetComponent<InteractionObject>();
+            }
+
+            if (targetInteraction && targetInteraction.enabled)
+            {
+                interactionText = targetInteraction.GetInteractionText();
+            }
+
+            SetInteractableNameText(interactionText);
         }
 
-        if (targetInteraction && targetInteraction.enabled)
+        private void SetInteractableNameText(string newText)
         {
-            interactionText = targetInteraction.GetInteractionText();
+            if (interactableName)
+            {
+                interactableName.text = newText;
+            }
         }
 
-        SetInteractableNameText(interactionText);
-    }
-
-    private void SetInteractableNameText(string newText)
-    {
-        if (interactableName)
+        public void TryInteract()
         {
-            interactableName.text = newText;
-        }
-    }
+            if (targetInteraction == null)
+            {
+                Debug.LogWarning("No target interaction object found.");
+                return;
+            }
 
-    public void TryInteract()
-    {
-        if (targetInteraction && targetInteraction.enabled)
-        {
-            targetInteraction.Interact();
+            if (!targetInteraction.enabled)
+            {
+                Debug.LogWarning("Target interaction object is not enabled.");
+                return;
+            }
+
+            if (player == null)
+            {
+                Debug.LogError("Player reference is not set.");
+                return;
+            }
+
+            Button_SO button = targetInteraction.GetComponent<Button_SO>();
+
+            if (button == null || player.TryBuy(button))
+            {
+                targetInteraction.Interact();
+            }
+            else
+            {
+                Debug.LogWarning("Player cannot buy the item.");
+            }
         }
     }
 }

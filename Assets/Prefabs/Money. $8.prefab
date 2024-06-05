@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1869526036102659581}
   - component: {fileID: 1486250702810055680}
   m_Layer: 0
-  m_Name: Money
+  m_Name: Money. $8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 254e4c7a7cccac849a013a6574291f4e, type: 2}
+  - {fileID: 2100000, guid: 6e25a2fd5afbdba40b20e4abd91c195e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  money: 1
+  money: 8

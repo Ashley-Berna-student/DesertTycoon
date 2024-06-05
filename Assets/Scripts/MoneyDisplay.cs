@@ -12,7 +12,7 @@ namespace Money
         void Update()
         {
             // Update the text element with the player's money value
-            moneyText.text = "Money: $" + player.gold.ToString("");  // Formatting to 2 decimal places
+            moneyText.text = player.gold.ToString("");  // Formatting to 2 decimal places
         }
     }
 }
